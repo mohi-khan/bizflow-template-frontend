@@ -7,7 +7,7 @@ export default function ForgotPassword() {
       <h1 className="text-6xl font-bold mb-4 text-center">Forgot Password</h1>
       <p className="text-2xl mb-8 text-center">Please Contact System Admin</p>
       <Button asChild className="bg-yellow-400 hover:bg-yellow-500 text-black">
-        <Link href="/signin">Return to Sign In</Link>
+        <Link href="/">Return to Sign In</Link>
       </Button>
     </div>
   )
