@@ -1,32 +1,16 @@
 import { fetchApi } from '@/utils/http'
 import {
-  CreateCompanyType,
-  GetCompanyType,
+  SignInRequest,
+  SignInResponse,
+  SignInResponseSchema,
 } from '@/utils/type'
 
-export async function createCompany(
-  data: CreateCompanyType,
-  token: string
-) {
-  return fetchApi<CreateCompanyType>({
-    url: 'api/company/create-company',
+export async function signIn(credentials: SignInRequest) {
+  return fetchApi<SignInResponse>({
+    url: 'api/auth/login',
     method: 'POST',
-    body: data,
-    headers: {
-      Authorization: token,
-      'Content-Type': 'application/json',
-    },
-  })
-}
-
-export async function getAllCompanies(token: string) {
-  return fetchApi<GetCompanyType[]>({
-    url: 'api/company/get-all-companies',
-    method: 'GET',
-    headers: {
-      Authorization: token,
-      'Content-Type': 'application/json',
-    },
+    body: credentials,
+    schema: SignInResponseSchema,
   })
 }
 

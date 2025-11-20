@@ -17,8 +17,8 @@ import {
 } from '@/components/ui/card'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { EyeIcon, EyeOffIcon, LockIcon } from 'lucide-react'
-import { signIn } from '@/api/signin-api'
 import { toast } from '@/hooks/use-toast'
+import { signIn } from '@/utils/api'
 
 export default function SignIn() {
   const [username, setUsername] = useState('')
@@ -52,13 +52,13 @@ export default function SignIn() {
 
         // Store token if remember me is checked
         localStorage.setItem('authToken', response.data.token)
-        
+
         console.log(response.data.user)
         // Store user information in localStorage
         const {
           userId,
           roleId,
-          userCompanies,
+          // userCompanies,
           // voucherTypes,
           // employeeId,
         } = response.data.user
@@ -66,7 +66,7 @@ export default function SignIn() {
         const userInfo = {
           userId,
           roleId,
-          userCompanies,
+          // userCompanies,
           // voucherTypes,
           // employeeId,
         }
@@ -100,7 +100,7 @@ export default function SignIn() {
               height={80}
               className=""
             /> */}
-            <h2 className="text-3xl font-bold ">Asset Tiger</h2>
+            <h2 className="text-3xl font-bold ">School Management</h2>
           </div>
           <CardTitle className="text-2xl font-bold text-center">
             Sign in to your account
@@ -154,13 +154,13 @@ export default function SignIn() {
               </Alert>
             )}
             <Button
-                type="submit"
-                className="w-full bg-yellow-400 mt-10 hover:bg-yellow-500 text-black"
-                disabled={isLoading}
-              >
-                <LockIcon className="mr-2 h-4 w-4" />
-                {isLoading ? 'Signing In...' : 'Sign In'}
-              </Button>
+              type="submit"
+              className="w-full bg-yellow-400 mt-10 hover:bg-yellow-500 text-black"
+              disabled={isLoading}
+            >
+              <LockIcon className="mr-2 h-4 w-4" />
+              {isLoading ? 'Signing In...' : 'Sign In'}
+            </Button>
           </form>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">

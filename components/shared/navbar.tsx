@@ -22,7 +22,7 @@ export default function Navbar() {
   
         if (!storedUserData || !storedToken) {
           console.log('No user data or token found in localStorage')
-          router.push('/signin')
+          router.push('/')
           return
         }
       }
@@ -55,7 +55,7 @@ export default function Navbar() {
     localStorage.removeItem('currentUser')
     localStorage.removeItem('authToken')
     setIsProfileOpen(false)
-    router.push('/signin')
+    router.push('/')
   }
 
   return (
@@ -66,35 +66,6 @@ export default function Navbar() {
             <div className="flex items-center">
               <span className="text-2xl font-bold text-gray-800">Biz</span>
               <span className="text-2xl font-bold text-yellow-500">Flow</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="hidden sm:flex sm:items-center sm:space-x-4 ml-4">
-              <div className="relative flex items-center space-x-4">
-                {/* List of Assets */}
-                <button className="flex items-center space-x-2 p-3 text-sm font-medium text-gray-900  rounded-lg transition ease-in-out duration-150">
-                  <List className="h-5 w-5" />
-                  <span>List of Assets</span>
-                </button>
-
-                {/* Add an Asset */}
-                <button className="flex items-center space-x-2 p-3 text-sm font-medium text-gray-900  rounded-lg transition ease-in-out duration-150">
-                  <PlusCircle className="h-5 w-5" />
-                  <span>Add an Asset</span>
-                </button>
-
-                {/* Search Input and Button */}
-                <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="px-3 py-2 text-sm focus:outline-none"
-                  />
-                  <button className="p-2 bg-yellow-400 hover:bg-yellow-500 transition ease-in-out duration-150">
-                    <Search className="h-5 w-5 text-gray-900" />
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
           <div className="flex items-center ml-4">
