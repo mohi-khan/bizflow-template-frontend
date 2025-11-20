@@ -30,7 +30,7 @@ const HomeNavbar = () => {
     localStorage.removeItem('currentUser')
     localStorage.removeItem('authToken')
     setIsProfileOpen(false)
-    router.push('/signin')
+    router.push('/')
   }
 
   // Smooth scroll function
@@ -285,7 +285,7 @@ const HomeNavbar = () => {
                 CREATE NEW ACCOUNT
               </Link>
               <Link
-                href="/signin"
+                href="/"
                 className="block w-full text-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition-colors cursor-pointer"
               >
                 SIGN IN
@@ -461,7 +461,7 @@ const HomeNavbar = () => {
                   CREATE NEW ACCOUNT
                 </Link>
                 <Link
-                  href="/signin"
+                  href="/"
                   className="block w-full text-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition-colors cursor-pointer"
                 >
                   SIGN IN
