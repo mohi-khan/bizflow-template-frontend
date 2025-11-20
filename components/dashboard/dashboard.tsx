@@ -19,7 +19,7 @@ export default function Dashboard() {
   
         if (!storedUserData || !storedToken) {
           console.log('No user data or token found in localStorage')
-          router.push('/signin')
+          router.push('/')
           return
         }
       }
